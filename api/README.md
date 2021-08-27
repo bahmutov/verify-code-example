@@ -40,7 +40,7 @@ $ npm start
 $ npm run dev
 ```
 
-The API responds at port 4000.
+The API responds at port 4343.
 
 ## Routes
 

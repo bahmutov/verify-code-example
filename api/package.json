@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "micro -l tcp://localhost:4000",
-		"dev": "micro-dev -p 4000"
+		"start": "micro -l tcp://localhost:4343",
+		"dev": "micro-dev -p 4343"
 	},
 	"keywords": [],
 	"author": "",

@@ -2,7 +2,7 @@
 export async function post({ body }) {
 	console.log('posting new user:', body);
 
-	const res = await fetch('http://localhost:4000/signup', {
+	const res = await fetch('http://localhost:4343/signup', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

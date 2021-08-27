@@ -2,7 +2,7 @@
 export async function post({ body }) {
 	console.log('verification code:', body);
 
-	const res = await fetch('http://localhost:4000/code', {
+	const res = await fetch('http://localhost:4343/code', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

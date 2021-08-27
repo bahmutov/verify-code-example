@@ -9,7 +9,7 @@
 		"preview": "svelte-kit preview",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-		"cy": "start-test dev 3000 cy:open",
+		"cy": "start-test dev 3000 dev:api 4343 cy:open",
 		"cy:open": "cypress open",
 		"postinstall": "npm install --prefix api",
 		"dev:api": "npm run dev --prefix api"
