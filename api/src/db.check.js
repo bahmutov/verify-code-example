@@ -21,15 +21,15 @@ const connection = makeConnection();
 // );
 
 const user = {
-	username: 'joe',
-	email: 'joe@example.com'
+  username: 'joe',
+  email: 'joe@example.com'
 };
 connection.query('INSERT INTO users SET ?', user, function (error, results, fields) {
-	if (error) {
-		console.error(error);
-		throw error;
-	}
-	console.log('New user id: %s', results.insertId);
+  if (error) {
+    console.error(error);
+    throw error;
+  }
+  console.log('New user id: %s', results.insertId);
 });
 
 connection.end();

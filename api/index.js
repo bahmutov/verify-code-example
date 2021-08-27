@@ -13,7 +13,7 @@ const dispatch = require('micro-route/dispatch');
 const greeting = () => 'Welcome to Micro!';
 
 module.exports = dispatch()
-	.dispatch('/signup', 'POST', signup)
-	.dispatch('/phone', 'POST', phone)
-	.dispatch('/code', 'POST', code)
-	.otherwise(greeting);
+  .dispatch('/signup', 'POST', signup)
+  .dispatch('/phone', 'POST', phone)
+  .dispatch('/code', 'POST', code)
+  .otherwise(greeting);

@@ -1,14 +1,22 @@
 /// <reference types="cypress" />
 
-it('fails with the wrong code', () => {
-	cy.visit('/');
-	cy.get('[name=username]').type('u');
-	cy.get('[name=email]').type('e');
-	cy.get('button').click();
+// Lodash library is bundled with Cypress
+const { _ } = Cypress;
 
-	cy.get('[name=phone]').type('555-12-3456{enter}');
+it('shows an error message for wrong code', () => {
+  cy.visit('/');
 
-	cy.get('[name=code]').type('0000');
-	cy.get('button').click();
-	cy.contains('.error-message', 'Wrong confirmation code').should('be.visible');
+  const username = `test-${_.random(1e4)}`;
+  const email = `${username}@example.com`;
+
+  cy.get('[name=username]').type(username);
+  cy.get('[name=email]').type(email);
+  cy.contains('button', 'Sign up').click();
+
+  cy.get('[name=phone]').type('555-123-4060{enter}', { delay: 75 });
+
+  // use a wrong code on purpose
+  cy.get('[name=code]').type('0000', { delay: 75 });
+  cy.get('button').click();
+  cy.contains('.error-message', 'Wrong confirmation code').should('be.visible');
 });

@@ -6,21 +6,21 @@ const database = process.env.DB_NAME;
 const password = process.env.DB_PASSWORD;
 
 if (!host || !user || !database || !password) {
-	throw new Error('DB variables are not set');
+  throw new Error('DB variables are not set');
 }
 console.log('using db "%s" at "%s"', database, host);
 
 const makeConnection = () => {
-	const connection = mysql.createConnection({
-		host,
-		user,
-		password,
-		database
-	});
+  const connection = mysql.createConnection({
+    host,
+    user,
+    password,
+    database
+  });
 
-	connection.connect();
+  connection.connect();
 
-	return connection;
+  return connection;
 };
 
 module.exports = { makeConnection };

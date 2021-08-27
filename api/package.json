@@ -1,21 +1,21 @@
 {
-	"name": "api",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"start": "micro -l tcp://localhost:4343",
-		"dev": "micro-dev -p 4343"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"micro": "^9.3.4",
-		"micro-route": "^2.5.0",
-		"mysql": "^2.18.1"
-	},
-	"devDependencies": {
-		"micro-dev": "^3.0.0"
-	}
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro -l tcp://localhost:4343",
+    "dev": "micro-dev -p 4343"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^9.3.4",
+    "micro-route": "^2.5.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
 }
