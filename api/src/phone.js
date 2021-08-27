@@ -7,7 +7,16 @@ module.exports = async function (req, res) {
   const { userId, phoneNumber } = await json(req);
   console.log('adding phone %s for user %d', phoneNumber, userId);
 
-  const phoneConfirmationCode = String(Math.random()).slice(2, 6);
+  let phoneConfirmationCode;
+  const specialTestNumber = process.env.TEST_PHONE_NUMBER;
+  if (specialTestNumber && phoneNumber === specialTestNumber) {
+    // the test user! use the same code and do not send it
+    // just store in the database
+    phoneConfirmationCode = '4467';
+  } else {
+    // generate a random code, send it via SMS to the phone number
+    phoneConfirmationCode = String(Math.random()).slice(2, 6);
+  }
 
   const connection = makeConnection();
 

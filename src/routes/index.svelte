@@ -89,7 +89,7 @@
       <button type="submit">Verify code</button>
     </form>
   {:else if state === 'VerifiedPhone'}
-    <h1>Phone verified!</h1>
+    <h1 data-cy="PhoneVerified">Phone verified!</h1>
   {/if}
 
   {#if errorMessage}
