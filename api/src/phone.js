@@ -20,26 +20,6 @@ module.exports = async function (req, res) {
 
   const connection = makeConnection();
 
-  // any existing user with the same phone number should
-  // lose their phone verified status
-  await new Promise((resolve, reject) => {
-    connection.query(
-      {
-        sql:
-          'UPDATE users SET phoneConfirmationCode = NULL, isPhoneVerified = false WHERE phone = ?',
-        values: [phoneNumber]
-      },
-      function (error, results, fields) {
-        if (error) {
-          console.error(error);
-          return reject(error);
-        }
-        console.log('removed phone %s for any existing users', phoneNumber);
-        resolve();
-      }
-    );
-  });
-
   // save the random phone verification code
   // and "send" the phone verification code via SMS
   // (in this demo we are NOT sending the verification code via SMS)
