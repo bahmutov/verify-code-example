@@ -8,10 +8,16 @@ module.exports = async function (req, res) {
   console.log('adding phone %s for user %d', phoneNumber, userId);
 
   let phoneConfirmationCode;
-  const specialTestNumber = process.env.TEST_PHONE_NUMBER;
-  if (specialTestNumber && phoneNumber === specialTestNumber) {
+  if (process.env.TEST_PHONE_NUMBER && phoneNumber === process.env.TEST_PHONE_NUMBER) {
     // the test user! use the same code and do not send it
     // just store in the database
+    phoneConfirmationCode = '4467';
+  } else if (
+    process.env.TEST_PHONE_NUMBER_PREFIX &&
+    phoneNumber.startsWith(process.env.TEST_PHONE_NUMBER_PREFIX)
+  ) {
+    // the test user that uses the phone number prefix
+    // to allow multiple test phone numbers
     phoneConfirmationCode = '4467';
   } else {
     // generate a random code, send it via SMS to the phone number
