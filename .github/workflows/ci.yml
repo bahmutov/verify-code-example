@@ -7,10 +7,10 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
+      // run E2E tests with install, caching,
+      // starting the servers etc using
+      // https://github.com/cypress-io/github-action
       - name: Run tests 🧪
-        // run E2E tests with install, caching,
-        // starting the servers etc. using
-        // https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v2
         with:
           start: npm run dev, npm run dev:api
