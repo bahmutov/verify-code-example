@@ -36,6 +36,9 @@ it('looks up the user via API call', () => {
   const phoneNumber = getTestPhoneNumber();
   cy.get('[name=phone]').type(`${phoneNumber}{enter}`, { delay: 75 });
 
+  // again, wait for the next page to load before checking the API
+  cy.get('[name=code]').should('be.visible');
+
   // the user should have the random code and phone number set
   getUserInfo(username)
     .should('deep.include', {
