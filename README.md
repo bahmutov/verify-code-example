@@ -1,4 +1,4 @@
-# verify-code-example
+# verify-code-example ![cypress version](https://img.shields.io/badge/cypress-8.3.1-brightgreen)
 
 > Example web application with MySQL database to verify the user phone number
 
