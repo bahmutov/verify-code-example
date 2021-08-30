@@ -10,12 +10,3 @@ jobs:
       // https://github.com/cypress-io/github-action
       - name: Run tests 🧪
         uses: cypress-io/github-action@v2
-        with:
-          start: 'npm run dev, npm run dev:api'
-        env:
-          DB_HOST: '${{ DB_HOST }}'
-          DB_NAME: '${{ DB_NAME }}'
-          DB_USER: '${{ DB_USER }}'
-          DB_PASSWORD: '${{ DB_PASSWORD }}'
-          TEST_PHONE_NUMBER: '${{ TEST_PHONE_NUMBER }}'
-          TEST_PHONE_NUMBER_PREFIX: '${{ TEST_PHONE_NUMBER_PREFIX }}'
