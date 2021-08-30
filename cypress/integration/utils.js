@@ -12,3 +12,8 @@ export const getTestPhoneNumber = () => {
   const phoneNumber = testNumberPrefix + _.padStart(_.random(0, 100), 2, '0');
   return phoneNumber;
 };
+
+export const getUserInfo = (username) =>
+  // use the API url to request the user info
+  // https://on.cypress.io/request
+  cy.request(`http://localhost:4343/users/${username}`).its('body');

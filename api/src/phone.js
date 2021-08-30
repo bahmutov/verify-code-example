@@ -32,7 +32,11 @@ module.exports = async function (req, res) {
   await new Promise((resolve, reject) => {
     connection.query(
       {
-        sql: 'UPDATE users SET phone = ?, phoneConfirmationCode = ? WHERE user_id = ?',
+        sql: `
+          UPDATE users
+          SET phone = ?, phoneConfirmationCode = ?, isPhoneVerified = false
+          WHERE user_id = ?
+        `,
         values: [phoneNumber, phoneConfirmationCode, userId]
       },
       function (error, results, fields) {
@@ -41,10 +45,7 @@ module.exports = async function (req, res) {
           return reject(error);
         }
         console.log('for user %s set phone %s', userId, phoneNumber);
-        console.log(
-          'HACK: the phone confirmation code with this phone is %s',
-          phoneConfirmationCode
-        );
+        console.log('The phone confirmation code with this phone is %s', phoneConfirmationCode);
         resolve();
       }
     );

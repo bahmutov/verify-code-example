@@ -61,8 +61,10 @@ module.exports = async function (req, res) {
   await new Promise((resolve, reject) => {
     connection.query(
       {
-        sql:
-          'UPDATE users SET phoneConfirmationCode = NULL, isPhoneVerified = false WHERE phone = ?',
+        sql: `
+          UPDATE users SET phoneConfirmationCode = NULL, isPhoneVerified = false
+          WHERE phone = ? AND isPhoneVerified = true
+        `,
         values: [phoneNumber]
       },
       function (error, results, fields) {
