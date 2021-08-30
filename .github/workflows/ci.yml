@@ -13,9 +13,9 @@ jobs:
         with:
           start: npm run dev, npm run dev:api
         env:
-          DB_HOST: '${{ DB_HOST }}'
-          DB_NAME: '${{ DB_NAME }}'
-          DB_USER: '${{ DB_USER }}'
-          DB_PASSWORD: '${{ DB_PASSWORD }}'
-          TEST_PHONE_NUMBER: '${{ TEST_PHONE_NUMBER }}'
-          TEST_PHONE_NUMBER_PREFIX: '${{ TEST_PHONE_NUMBER_PREFIX }}'
+          DB_HOST: '${{ secrets.DB_HOST }}'
+          DB_NAME: '${{ secrets.DB_NAME }}'
+          DB_USER: '${{ secrets.DB_USER }}'
+          DB_PASSWORD: '${{ secrets.DB_PASSWORD }}'
+          TEST_PHONE_NUMBER: '${{ secrets.TEST_PHONE_NUMBER }}'
+          TEST_PHONE_NUMBER_PREFIX: '${{ secrets.TEST_PHONE_NUMBER_PREFIX }}'
