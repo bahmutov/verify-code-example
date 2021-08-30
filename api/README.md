@@ -24,7 +24,7 @@ CREATE TABLE users(
     email VARCHAR(40) NOT NULL,
     phone VARCHAR(20),
     phoneConfirmationCode VARCHAR(10),
-    isPhoneVerified BOOLEAN,
+    isPhoneVerified BOOLEAN DEFAULT FALSE,
     PRIMARY KEY(user_id)
 );
 ```
