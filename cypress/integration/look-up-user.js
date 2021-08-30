@@ -19,6 +19,9 @@ it('looks up the user via API call', () => {
   cy.get('[name=username]').type(username);
   cy.get('[name=email]').type(email);
   cy.contains('button', 'Sign up').click();
+  // important: wait for the next page to load
+  // to know for sure the API call has finished
+  cy.get('[name=phone]').should('be.visible');
 
   // find the user information and confirm the user has
   // no phone and no confirmation code
