@@ -13,7 +13,7 @@ jobs:
       - name: Run tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          start: npm run dev, npm run dev:api
+          start: 'npm run dev, npm run dev:api'
         env:
           DB_HOST: '${{ DB_HOST }}'
           DB_NAME: '${{ DB_NAME }}'
