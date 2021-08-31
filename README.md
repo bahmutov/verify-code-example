@@ -2,6 +2,12 @@
 
 > Example web application with MySQL database to verify the user phone number
 
+## Blog posts
+
+This example was used in the following blog posts
+
+- [How To Verify Phone Number During Tests Part 1](https://glebbahmutov.com/blog/verify-phone-part-one/)
+
 ## Install
 
 ```bash
