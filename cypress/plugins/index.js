@@ -1,27 +1,11 @@
 // @ts-check
 /// <reference types="cypress" />
-const mysql = require('../../api/node_modules/mysql');
+const { makeConnection } = require('../../api/src/db.config');
 
 module.exports = function (on, config) {
-  // this function runs in Node at the start of the project
-  const host = process.env.DB_HOST;
-  const user = process.env.DB_USER;
-  const database = process.env.DB_NAME;
-  const password = process.env.DB_PASSWORD;
-  if (!host || !user || !database || !password) {
-    throw new Error('DB variables are not set');
-  }
-
   on('task', {
     async getUser(id) {
-      const connection = mysql.createConnection({
-        host,
-        user,
-        password,
-        database
-      });
-
-      connection.connect();
+      const connection = makeConnection();
 
       const theUser = await new Promise((resolve, reject) => {
         connection.query(

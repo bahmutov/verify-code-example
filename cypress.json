@@ -2,5 +2,6 @@
   "fixturesFolder": false,
   "supportFile": false,
   "baseUrl": "http://localhost:3000",
-  "ignoreTestFiles": "utils.js"
+  "ignoreTestFiles": "utils.js",
+  "nodeVersion": "system"
 }
