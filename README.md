@@ -6,7 +6,8 @@
 
 This example was used in the following blog posts
 
-- [How To Verify Phone Number During Tests Part 1](https://glebbahmutov.com/blog/verify-phone-part-one/)
+- [How To Verify Phone Number During Tests Part 1](https://glebbahmutov.com/blog/verify-phone-part-one/) shows how to use a test phone prefix
+- [How To Verify Phone Number During Tests Part 2](https://glebbahmutov.com/blog/verify-phone-part-two/) shows how to query MySQL database from the test
 
 ## Install
 
@@ -49,6 +50,10 @@ $ npm run cy
 If everything starts correctly, you should see Cypress Desktop GUI window.
 
 ![The app, api, and Cypress started](./images/cy.png)
+
+## Tests
+
+Find the end-to-end tests in the folder [cypress/integration](./cypress/integration). Read the blog posts linked above for details.
 
 ## Small print
 
