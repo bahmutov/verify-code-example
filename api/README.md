@@ -2,7 +2,7 @@
 
 This server responds to HTTP requests and connects to the MySQL database to insert, update, and fetch records. See the top level routing in the [index.js](./index.js) file (served using [micro](https://github.com/vercel/micro#readme) or [micro-dev](https://github.com/vercel/micro-dev))
 
-The database connection requires `.env` file with the following environment variables
+The database connection requires an `.env` file with the following environment variables
 
 ```
 DB_HOST=
@@ -29,7 +29,7 @@ CREATE TABLE users(
 );
 ```
 
-Connection to the MySQL database through [mysql](https://github.com/mysqljs/mysql), see [api](./api) folder.
+Connection to the MySQL database through the NPM module [mysql](https://github.com/mysqljs/mysql) installed as a production dependency in the [package.json](./package.json) file in this folder. See the source code in the [src/db.config.js](./src/db.config.js) file.
 
 ## Run
 

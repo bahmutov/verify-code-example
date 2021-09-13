@@ -20,6 +20,8 @@ $ cd api
 $ npm install
 ```
 
+Note that the [api](./api) folder has its own [package.json](./api/package.json) file with its own dependencies, including the `mysql` module that allows Cypress here to connect and query the MySQL database.
+
 ## Start
 
 You can start the API and the web application using two terminals:

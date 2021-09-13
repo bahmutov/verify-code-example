@@ -1,7 +1,8 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Small API fetching information from a MySQL database",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "micro -l tcp://localhost:4343",
